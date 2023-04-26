@@ -13,7 +13,10 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const result = await axios.post("http://localhost:5000", userDetails);
+      const result = await axios.post(
+        "http://localhost:5000/register",
+        userDetails
+      );
       console.log(result.status);
     } catch (e) {
       console.log(e);

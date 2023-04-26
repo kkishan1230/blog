@@ -1,8 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 require("./database/config");
-
-const user = require("./database/users");
+const UserDetails = require("./database/User");
 
 const app = express();
 app.use(cors());
@@ -16,13 +15,13 @@ app.listen(port, () => {
 });
 
 // get
-app.get("/", cors(), (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
 // post
-app.post("/", async (req, res) => {
-  const data = await req.body;
-  console.log(data);
-  res.send("Response send");
+app.post("/register", async (req, res) => {
+  const user = await new UserDetails(req.body);
+  const result = user.save();
+  res.send(user);
 });
