@@ -1,0 +1,50 @@
+@use "/src/styles/colors";
+
+.loginPage {
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    label {
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    input {
+      padding: 10px 20px;
+      outline: none;
+      border: 2px solid rgb(120, 131, 250);
+      border-radius: 8px;
+    }
+
+    .notMatched {
+      background-color: colors.$navBack;
+      color: colors.$white;
+      width: 100%;
+      padding: 10px 0;
+      border-radius: 8px;
+      border: 1px solid rgb(120, 131, 250);
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .matched {
+      background-color: colors.$navBack;
+      color: colors.$white;
+      width: 100%;
+      padding: 10px 0;
+      border-radius: 8px;
+      border: 1px solid rgb(120, 131, 250);
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}
